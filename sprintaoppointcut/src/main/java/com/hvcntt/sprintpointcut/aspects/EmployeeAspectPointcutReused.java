@@ -4,6 +4,9 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 
+//Sometimes we have to use same Pointcut expression at multiple places,
+//we can create an empty method with @Pointcut annotation and then use it as expression in advices.
+
 @Aspect
 public class EmployeeAspectPointcutReused {
 
