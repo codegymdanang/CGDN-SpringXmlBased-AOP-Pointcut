@@ -1,0 +1,31 @@
+package com.hvcntt.sprintpointcut.aspects;
+
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
+
+@Aspect
+public class EmployeeAspectPointcutReused {
+
+	@Before("getNamePointcut()")
+	public void loggingAdvice(){
+		System.out.println("Reuse Executing loggingAdvice on getName()");
+	}
+	
+	@Before("getNamePointcut()")
+	public void secondAdvice(){
+		System.out.println("Reuse Executing secondAdvice on getName()");
+	}
+	
+	@Pointcut("execution(public String getName())")
+	public void getNamePointcut(){}
+	
+	@Before("allMethodsPointcut()")
+	public void allServiceMethodsAdvice(){
+		System.out.println("Before executing service method");
+	}
+	
+	//Pointcut to execute on all the methods of classes in a package
+	@Pointcut("within(com.hvcntt.sprintpointcut.service.*)")
+	public void allMethodsPointcut(){}
+}
