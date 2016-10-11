@@ -11,8 +11,9 @@ public class Main {
 		EmployeeService employeeService = ctx.getBean("employeeService", EmployeeService.class);
 		
 		//Aspect Before
-		//employeeService.getEmployee().getName();
-		
+		employeeService.getEmployee().getName();
+		// Aspect Point cut
+		employeeService.getEmployee().setName("Pankaj");
 		
 		
 	}
