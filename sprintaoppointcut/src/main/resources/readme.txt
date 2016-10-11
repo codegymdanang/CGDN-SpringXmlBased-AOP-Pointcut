@@ -18,3 +18,28 @@ We can also use CGLIB proxy by adding it as the dependency in the Spring AOP pro
 
 Weaving: It is the process of linking aspects with other objects to create the advised proxy objects. This can be done at compile time, load time or at runtime. 
 Spring AOP performs weaving at the runtime.
+
+AOP Advice Types
+
+Based on the execution strategy of advices, they are of following types.
+
+Before Advice: These advices runs before the execution of join point methods.
+We can use @Before annotation to mark an advice type as Before advice.
+
+After (finally) Advice: An advice that gets executed after the join point method finishes executing, 
+whether normally or by throwing an exception. We can create after advice using @After annotation.
+
+After Returning Advice: Sometimes we want advice methods to execute only if the join point method executes normally. We can use @AfterReturning annotation to mark a method as after returning advice.
+
+After Throwing Advice: This advice gets executed only when join point method throws exception, 
+we can use it to rollback the transaction declaratively. We use @AfterThrowing annotation for this type of advice.
+
+Around Advice: This is the most important and powerful advice. This advice surrounds the join point method and we can also choose whether to execute the join point method or not. 
+We can write advice code that gets executed before and after the execution of the join point method. It is the responsibility of around advice to invoke the join point method and return values if the method is returning something. 
+We use @Around annotation to create around advice methods.
+
+The points mentioned above may sound confusing but when we will look at the implementation of Spring AOP, things will be more clear. 
+Let’s start creating a simple Spring project with AOP implementations. 
+Spring provides support for using AspectJ annotations to create aspects and we will be using that for simplicity. 
+All the above AOP annotations are defined in org.aspectj.lang.annotation package.
+
