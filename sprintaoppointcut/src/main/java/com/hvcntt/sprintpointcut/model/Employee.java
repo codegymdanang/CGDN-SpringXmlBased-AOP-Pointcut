@@ -1,5 +1,7 @@
 package com.hvcntt.sprintpointcut.model;
 
+import com.hvcntt.sprintpointcut.aspects.Loggable;
+
 public class Employee {
 
 	private String name;
@@ -8,6 +10,7 @@ public class Employee {
 		return name;
 	}
 
+	@Loggable
 	public void setName(String name) {
 		this.name = name;
 	}

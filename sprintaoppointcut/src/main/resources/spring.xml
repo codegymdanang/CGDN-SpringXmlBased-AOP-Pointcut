@@ -24,6 +24,7 @@
 <bean name="employeeAspectPointcutReuse" class="com.hvcntt.sprintpointcut.aspects.EmployeeAspectPointcutReused" />
 <bean name="employeeAspectPointcutAfter" class="com.hvcntt.sprintpointcut.aspects.EmployeeAfterAspect" />
 <bean name="employeeAspectPointcutAround" class="com.hvcntt.sprintpointcut.aspects.EmployeeAroundAspect" />
+<bean name="employeeAspectPointcutAnnotation" class="com.hvcntt.sprintpointcut.aspects.EmployeeAnnotationAspect" />
 
 
 
